@@ -100,13 +100,14 @@ ____
 
 int main() {
     printf("This is highlighted C++ code\n");
+    printf("Note that you don't need to specify a language; this is because the default is set to C++.");
 
     return 0;
 }
 ----
 
-.This is also {cpp}, but with line numbers, a title, and a callout.
-[source,role="linenos"]
+.This is also {cpp}, but explicitly stated with line numbers, a title, and a callout.
+[source,cpp,role="linenos"]
 ----
 void main() {
     // hello! <1>
