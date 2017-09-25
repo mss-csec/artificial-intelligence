@@ -5,6 +5,7 @@ category: <Your subclub category>
 lesson: 2
 ---
 = Using AsciiDoc
+:cpp: {cpp}
 
 AsciiDoc syntax is also supported.
 Personally, I prefer AsciiDoc for its extensibility and flexibility, but the markup language you choose is your own choice.
@@ -42,6 +43,17 @@ This is because the title is written right after the front matter --- it's the t
 This is _not_ meant to be a substitute for reading the link:http://asciidoctor.org/docs/[official documentation].
 It is meant as a review of AsciiDoc syntax, assuming you are somewhat familiar with it already.
 There are many subtleties in AsciiDoc that cannot be covered in this review.
+====
+
+[IMPORTANT]
+====
+Due to the nature of AsciiDoc, there are several CSEC-specific modifications/additions to the basic syntax. Of note:
+
+. Write C++ as `{cpp}`.
+  This is required as two consecutive pluses (&plus;&plus;) is part of AsciiDoc syntax.
+  For replacing just that, use `{pp}`.
+. If you wish for code blocks to have line numbers, __do not__ use the `linenums` attribute.
+  Instead, add the "linenos" role to the block, i.e. `[role="linenos"]`.
 ====
 
 == This is a big heading. Use it for sections.
@@ -82,8 +94,8 @@ ____
 And you can quote people here, with just four underscores!
 ____
 
-++++
-{% highlight cpp %}
+[source]
+----
 #include <stdio.h>
 
 int main() {
@@ -91,14 +103,16 @@ int main() {
 
     return 0;
 }
-{% endhighlight %}
-++++
+----
 
-++++
-{% highlight cpp linenos %}
-// This is also C++, but with line numbers.
-{% endhighlight %}
-++++
+.This is also {cpp}, but with line numbers, a title, and a callout.
+[source,role="linenos"]
+----
+void main() {
+    // hello! <1>
+}
+----
+<1> Check out this comment!
 
 '''
 
