@@ -1,7 +1,7 @@
 ---
-title: <Your subclub title>
+title: Artificial Intelligence
 layout: landing
-category: <Your subclub category>
+category: artificial-intelligence
 schedule:
   example-lesson: 31 Dec 1969
 ---
