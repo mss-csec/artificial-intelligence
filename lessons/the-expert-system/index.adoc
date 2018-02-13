@@ -20,7 +20,12 @@ And oftentimes, those with more serious ailments are misdiagnosed, considering h
 If only you could automate the process of diagnosis and triage...
 
 First developed in the 1970's, the *expert system* was the first successful AI schema.
-These usually take the form of decision trees: if-then clauses that take some input -- _"I have these symptoms..."_ -- and give you the output that an expert would come to: _"You most likely have this affliction, but here are some other possible issues that can be narrowed down with these tests..."_.
+Expert systems are built to emulate the decision-making of an expert, hence their name.
 
-- Expert systems in graphs
-- Expert systems in bayesian networks/markov chains
+image:++https://www.explainxkcd.com/wiki/images/3/39/solar_panels.png++[xkcd 1924: Solar Panels, 300,300, role="right"]
+The most simple of these take the form of decision trees: if-then clauses that take some input -- _"I have these symptoms..."_ -- and give you the output that an expert would come to: _"You most likely have this affliction, but here are some other possible issues that can be narrowed down with these tests..."_
+Slightly more complicated ones can be represented with a flowchart.
+
+All expert systems can be boiled down to a deterministic *algorithm*: a set of instructions that, when given the same inputs, will come up with the same outputs.
+The only difference between an expert system and what are _conventionally_ considered algorithms are that algorithms are expected to give perfect answers.
+However, many questions posed for artificial intelligences -- and expert systems -- don't have precise metrics for success.
