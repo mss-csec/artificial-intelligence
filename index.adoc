@@ -3,7 +3,7 @@ layout: landing
 category: artificial-intelligence
 schedule:
   the-expert-system: 1 Jan 1970
-  early-video-games: 2 Jan 1970
+  video-games: 2 Jan 1970
   intelligence: 3 Jan 1970
   learning: 4 Jan 1970
   intractability: 5 Jan 1970
