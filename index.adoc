@@ -2,6 +2,7 @@
 layout: landing
 category: artificial-intelligence
 schedule:
+  introduction-to-artificial-intelligence: 31 Dec 1969
   the-expert-system: 1 Jan 1970
   video-games: 2 Jan 1970
   intelligence: 3 Jan 1970
