@@ -6,7 +6,7 @@ lesson: 1
 ---
 = Introduction to Artificial Intelligence
 
-The day before Valentine's Day, 2018, the BBC published an article by Dave Lee titled _link:++http://www.bbc.com/news/technology-43037899++[UK unveils extremism blocking tool]_, describing a tool created to detect IS propagandist videos.
+The day before Valentine's Day 2018, the BBC published an article by Dave Lee titled _link:++http://www.bbc.com/news/technology-43037899++[UK unveils extremism blocking tool]_, describing a tool created to detect IS propagandist videos.
 
 The news was quickly picked up by Inverse, an Amerian online tech magazine for young millenials.
 Their headline was significantly more exciting: _link:++https://www.inverse.com/article/41273-uk-company-creates-algorithm-to-flag-propaganda++[A.I. Algorithm Recognizes Terrorist Propaganda with 99 Percent Accuracy]_.
@@ -14,42 +14,4 @@ Their headline was significantly more exciting: _link:++https://www.inverse.com/
 The more sensational headline from Inverse was link:++https://www.reddit.com/r/Futurology/duplicates/7xha9m/ai_algorithm_recognizes_terrorist_propaganda_with/++[shared across ten communities on reddit].
 It gained particular traction on link:++https://www.reddit.com/r/Futurology/++[/r/Futurology], a subreddit -- community -- for redditors interested in new technologies.
 
-From here, we need to ask two questions: what makes this AI, and what does a ninety-nine percent accuracy mean?
-
-== Metrics
-
-The easier question to answer is the latter.
-What does accuracy mean?
-
-If we're doing *classification*, then what we want should have something to do with the misclassfication rate.
-A 99% accuracy should imply that one in one-hundred videos are misclassified -- either a propaganda video slipping through the cracks, or a harmless one being sent in for review.
-
-But these two different types of misclassifications are distinct, and there are more than one type of error.
-And more than one type of success.
-
-[cols="^,^,^"]
-|===
-||_Real Positive_|_Real Negative_
-e|Classified Positive
-v|True Positive
-[small]#IS video sent for review#
-v|*False Positive*
-[small]#normal video sent for review#
-
-e|Classified Negative
-v|*False Negative*
-[small]#IS video released#
-v|True Negative
-[small]#normal video released#
-|===
-
-This sort of table to show these types of errors are called *confusion matrices*, as in "ways in which the AI algorithm can be confused."footnote:[not because it's meant to be confusing]
-And from here, you may begin to gather the problem with using "accuracy."
-
-stem:[\text{Accuracy}=\frac{\text{TP} +\text{TN}}{\text{TP} +\text{FP} +\text{FN} +\text{TN}}]
-
-If a website received five million daily uploads, and only five hundred of them were for IS propaganda, it's not difficult to achieve an accuracy even higher than 99%.
-
-Just classify all videos negative.
-
-stem:[\text{Accuracy}=\frac{\text{TP} + \text{TN}}{\text{TP} + \text{FP} + \text{FN} + \text{TN}}=\frac{4999500+0}{4999500+500+0+0}=99.99\%]
+There's a number of questions that you might have here, and we'll address them in time
