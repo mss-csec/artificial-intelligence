@@ -14,4 +14,60 @@ Their headline was significantly more exciting: _link:++https://www.inverse.com/
 The more sensational headline from Inverse was link:++https://www.reddit.com/r/Futurology/duplicates/7xha9m/ai_algorithm_recognizes_terrorist_propaganda_with/++[shared across ten communities on reddit].
 It gained particular traction on link:++https://www.reddit.com/r/Futurology/++[/r/Futurology], a subreddit -- community -- for redditors interested in new technologies.
 
-There's a number of questions that you might have here, and we'll address them in time
+There's a number of questions that you might have here, and we'll address them in time.
+For now, we'll address _why_ this is considered artificial intelligence.
+
+What, to you, does artificial intelligence mean?
+
+Is that the right question to ask?
+
+== Asking the Right Questions
+
+One thing that often comes up with artificial intelligence is that all questions are not created equally.
+_"What does artifical intelligence mean?"_ is far too vague and leads us nowhere.
+While it is the obvious question to ask, it gives us no data to work with.
+
+Consider instead some classification: from some list of problems, what problems would you consider to be for artificial intelligence?
+
+[cols="1,1,1,1"]
+|===
+|Parsing Written Textfootnote:[scanning written text and turning it into text you can manipulate on a screen]
+|link:++https://en.wikipedia.org/wiki/Travelling_salesman_problem++[Travelling Salesman]footnote:[finding the fastest way to visit every city in a network of cities and highways that connect them]
+|Theorem Validatorfootnote:[proving mathematical lemmas]
+|Diagnosing Diseases
+|Self-Driving Cars|Legal Document Searchfootnote:[searching for precedent in cases; legal systems require impeccable definitions]|Language Processingfootnote:[figuring out, for example, the exact meaning of a sentence or paragraph or entire text]|Page Rankingfootnote:[google]
+|Decentralized Bankingfootnote:[cryptocurrencies]
+|Face Recognition
+|Mid-Flight Autopilotfootnote:[handing over the controls in the middle of a flight in a plane or space shuttle]
+|Cryptography
+|Quantum Key Distributionfootnote:[cryptography, but quantum]
+|Automated Drones
+|
+|
+|===
+
+Here's what most of us might come up with:
+|===
+|Just an Algorithm|Artificial Intelligence
+
+|Travelling Salesmanfootnote:[while the actual problem statement indicates that we want the _best possible_ route, by relaxing the contraints to a _reasonably fast_ route this turns into an AI problem.]
+|Parsing Written Text
+|Legal Document Searchfootnote:[this is essentially keyword search considering the pedancy of legality; however, extending the problem statement to include contextual searches turns this into an AI problem: specifically, that of language processing.]
+|Theorem Validator
+|Decentralized Banking
+|Diagnosing Diseasesfootnote:[for all diseases that we know of, this would certainly be an AI problems; however, if we restrict the constraints to just include common diseases (common cold, flu, stomach ulcers), this could easily switch into the "just an algorithm" category.]
+|Mid-Flight Autopilotfootnote:[unless you include things like evasive maneuvers for unexpected missile attacks, mid-flight piloting is just comparing the wind to your flight trajectory and adjusting accordingly.]
+|Self-Driving Cars
+|Cryptography
+|Language Processing
+|Quantum Key Distribution
+|Page Ranking
+|
+|Face Recognition
+|
+|Automated Drones
+|===
+
+Now that we have some data, we can continue our inquiry.
+What's common with all those that we decided were artificial intelligence, but not with those we decided were just an algorithm?
+
