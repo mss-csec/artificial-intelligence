@@ -74,3 +74,25 @@ Here's what most of us might come up with:
 Now that we have some data, we can continue our inquiry.
 What's common with all those that we decided were artificial intelligence, but not with those we decided were just an algorithm?
 
+One factor that might eventually come to mind is the desired precision of a solution.
+
+In all of the problems on the left column, there is an absolute "right answer."
+A solution to the travelling salesman problem must be the shortest path; any method for quantum distribution of cryptographic keys must be unbreakable; any worthwhile algorithm for tic-tac-toe must either win if possible or otherwise tie.
+The conditions for success are absolutely precise, and every solution can be measured to be better or worse than others.
+
+But there is always some sort of ambiguity when it comes to solutions for problems on the right side.
+Some things look very similar on paper, like 1 and l, or l and I.
+Sometimes you can tell the difference based on the typeface -- for example, there'd be no ambiguity if it were written in cursive -- but oftentimes written text is simply unclear.
+The conditions for success are unprecise.
+
+There isn't a "perfect" way to drive a car that's better than all other ways.
+There's a number of factors to consider when rating how well a car is driven: speed and safety are only the most obvious.
+What about comfort?
+What about gas consumption?
+What about trolley problem scenarios?
+Obviously there's a difference between driving badly and driving well, but there isn't a clear one between driving well and driving great.
+The conditions for success are imprecise.
+
+Go is a board game where you put stones on a nineteen-by-nineteen grid.
+While it is _theoretically_ possible to enumerate every single strategy to find the single best one, there are 361 moves on the first turn, 360 on the second, and this goes on. This makes for more than \(361!\) possible gamesfootnote:[every turn, one stone is placed in an empty spot; however, stones can be "captured," which frees up spots, so the number of games can't just be calculated by a factorial], which is larger than \(1.4\times10^{768}\).
+For an idea of scale, there's about \(10^{80}\) atoms in the visible universe.
