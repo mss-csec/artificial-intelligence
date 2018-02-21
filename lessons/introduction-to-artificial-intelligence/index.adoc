@@ -35,14 +35,17 @@ Consider instead some classification: from some list of problems, what problems 
 |link:++https://en.wikipedia.org/wiki/Travelling_salesman_problem++[Travelling Salesman]footnote:[finding the fastest way to visit every city in a network of cities and highways that connect them]
 |Theorem Validatorfootnote:[proving mathematical lemmas]
 |Diagnosing Diseases
-|Self-Driving Cars|Legal Document Searchfootnote:[searching for precedent in cases; legal systems require impeccable definitions]|Language Processingfootnote:[figuring out, for example, the exact meaning of a sentence or paragraph or entire text]|Page Rankingfootnote:[google]
+|Self-Driving Cars
+|Legal Document Searchfootnote:[searching for precedent in cases; legal systems require impeccable definitions]
+|Language Processingfootnote:[figuring out, for example, the exact meaning of a sentence or paragraph or entire text]
+|Page Rankingfootnote:[google]
 |Decentralized Bankingfootnote:[cryptocurrencies]
-|Face Recognition
 |Mid-Flight Autopilotfootnote:[handing over the controls in the middle of a flight in a plane or space shuttle]
 |Cryptography
 |Quantum Key Distributionfootnote:[cryptography, but quantum]
+|Playing Go
+|Playing Tic-Tac-Toe
 |Automated Drones
-|
 |
 |===
 
@@ -62,8 +65,8 @@ Here's what most of us might come up with:
 |Language Processing
 |Quantum Key Distribution
 |Page Ranking
-|
-|Face Recognition
+|Playing Tic-Tac-Toe
+|Playing Go
 |
 |Automated Drones
 |===
