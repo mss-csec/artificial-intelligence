@@ -5,8 +5,7 @@ schedule:
   introduction-to-artificial-intelligence: 31 Dec 1969
   the-expert-system: 1 Jan 1970
   video-games: 2 Jan 1970
-  intelligence: 3 Jan 1970
-  learning: 4 Jan 1970
+  intelligence-and-learning: 3 Jan 1970
   intractability: 5 Jan 1970
   decision-trees: 6 Jan 1970
   neural-networks: 7 Jan 1970
