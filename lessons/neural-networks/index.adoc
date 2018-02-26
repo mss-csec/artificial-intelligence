@@ -1,0 +1,7 @@
+---
+liquid: true
+layout: lesson
+category: artificial-intelligence
+lesson: 6
+---
+= Neural Networks
