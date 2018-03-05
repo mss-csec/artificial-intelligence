@@ -15,6 +15,6 @@ schedule:
 artificial intelligence, AI:: _n._ the theory and development of computer systems able to perform tasks that normally require human intelligence, such as visual perception, speech recognition, decision-making, and translation between languages.
 
 Artificial intelligence is an ill-defined term referring to a vast scope of technologies.
-In this subclub, we will explore the history of artificial intelligence, taking a look at expert systems and early AI in video games before diving into the more recent field of machine learning and modern developments in it.
+In this subclub, we will explore the history of artificial intelligence, taking a look at expert systems and early AI before diving into the more recent field of machine learning and modern developments in it.
 
 This subclub is intended to be beginner-friendly; while there will be some coding involved for those who have such experience, it will only be a small part of the overall course.
