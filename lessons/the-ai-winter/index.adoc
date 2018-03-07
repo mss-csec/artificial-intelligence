@@ -4,4 +4,4 @@ layout: lesson
 category: artificial-intelligence
 lesson: 3
 ---
-= Intelligence and the AI Winter
+= The AI Winter

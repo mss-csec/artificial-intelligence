@@ -2,13 +2,13 @@
 layout: landing
 category: artificial-intelligence
 schedule:
-  introduction-to-artificial-intelligence: 31 Dec 1969
-  the-expert-system: 1 Jan 1970
-  intelligence-and-the-ai-winter: 3 Jan 1970
-  intractability: 5 Jan 1970
-  decision-trees: 6 Jan 1970
-  neural-networks: 7 Jan 1970
-  evolutionary-algorithms: 8 Jan 1970
+  introduction-to-artificial-intelligence: 21 Mar 2018
+  the-expert-system: 7
+  the-ai-winter: 7
+  k-nearest-neighbours: 7
+  decision-trees: 7
+  neural-networks: 7
+  evolutionary-algorithms: 7
 ---
 = Artificial Intelligence
 

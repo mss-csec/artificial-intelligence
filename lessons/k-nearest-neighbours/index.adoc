@@ -4,4 +4,4 @@ layout: lesson
 category: artificial-intelligence
 lesson: 4
 ---
-= Intractability
+= k--Nearest Neighbours
