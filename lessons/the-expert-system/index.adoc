@@ -8,40 +8,36 @@ lesson: 2
 
 expert system:: a computer system that emulates the decision-making ability of a human expert.
 
-You are a computer-part manufacturer.
-Your customers have many requests for their computers: they want them to be fast, to be able to hold plenty of memory in RAM; they might want both an SSD and an HDD; they might want a capable graphics card and adequate interfaces with external hardware.
-But each every component in your inventory is only compatible with certain models of motherboards, and given the hundreds of models of parts you have, you need experts to handle these requests, which you get many times a day.
-If only you could automate the process of coming up with compatible configurations...
+In the late '70s, the Digital Equipment Corporation had a problem.
+Their newest instruction architecture, the VAX, was becoming incredibly popular.
 
-Or maybe you run a busy hospital -- the only hospital -- in a large city.
-And despite the funds you receive, your hospital is always overcrowded; you can't just buy the land the neighbouring skyscraper rests on, after all.
-You get many, many outpatients who only have a cold or a scratch and just need to get a prescription filled out, requiring a diagnosis by a doctor.
-And oftentimes, those with more serious ailments are misdiagnosed, considering how much time your limited doctors must work.
-If only you could automate the process of diagnosis and triage...
+[.right]
+image::http://anders.fupp.net/pubpics/2008/08-usa-route66-june-july08/11-California-ComputerHistoryMuseum/tn/IMG_0636.med.JPG[A VAX Mainframe,300,300]
 
-First developed in the 1970's, the *expert system* was the first successful AI schema.
-Expert systems are built to emulate the decision-making of an expert, hence their name.
+But their catalogue of computer parts had become so long that they needed an expert just to figure out what components they'd need to put together to fit their requirements.
 
-link:++http://xkcd.com/1924++[image:++https://www.explainxkcd.com/wiki/images/3/39/solar_panels.png++[xkcd 1924: Solar Panels, 300,300, role="right"]]
-The most simple of these take the form of decision trees: if-then clauses that take some input -- _"I have these symptoms..."_ -- and give you the output that an expert would come to: _"You most likely have this affliction, but here are some other possible issues that can be narrowed down with these tests..."_
-Slightly more complicated ones can be represented with a flowchart.
+To illustrate this, on the right is a mainframe for a VAX 11/780.
+All the different hardware parts are stored and connected in these cabinets -- and this is for just a single computer.
 
-All expert systems can be boiled down to a deterministic *algorithm*: a set of instructions that, when given the same inputs, will come up with the same outputs.
-The only difference between an expert system and what are _conventionally_ considered algorithms are that algorithms are expected to give perfect, objective answers to perfectly objective problems.
+Considering that an expert was needed to fit together one of these computers, it isn't all that surprising that DEC had difficulties training their salespeople to sell them.
+Hours would be wasted on consultations, and millions of dollars on replacement parts for misconfigured sales.
 
-However, questions posed for artificial intelligences -- and therefore expert systems -- don't have these precise metrics.
-As a result, whatever conclusions an expert system reaches are subject to the biases of the experts that were consulted during its construction.
+DEC hired an associate professor of Computer Science at Carnegie Mellon University called John McDermott.
+His task?
+Create a system that will automate this process.
 
-This is a good thing in many ways: an expert system that creates ideal configurations of computer parts, once constructed, can save many man-hours per consultation, most of which would be about the same questions anyways.
-The actually interesting, unaccounted for problems can be sent to the actual experts.
+== Bashing Your Head at a Problem
 
-Another pro for expert systems, as you'll realize later on, is that whoever constructed the expert system can predict exactly what it'll do, which makes it easier to fix any small bugs and errors or add small parts to it.
+A common problem-solving technique in computer science is that of brute force.
+Need to get through a door?
+Just bash it down.
 
-What is a big problem, however, is adding an entirely new feature or making a large update to the expert system; or, in more primitive systems that resemble flowcharts, adding a single new part.
-It's not too difficult to imagine how a small change can simply spiral out of control.
+McDermott didn't really do anything too creative.
+In fact, he did something very simple -- he asked the experts.
 
-Even more concerning is that certain problems are already impossible -- practically speaking -- to solve with an expert system.
-As just one example, there are numerous strategies available to Go players for any given position; just trying to classify the board into different positions is a feat to behold.
+Of course, it wasn't always a simple task, especially when experts disagreed over ideal configurations; but McDermott pressed through and eventually made the link:++https://en.wikipedia.org/wiki/Xcon++[R1 Expert System].
 
-So what now?
-What new approach should we take?
+The R1 was a monstrosity with over 2500 rules, but it worked -- and it would eventually save DEC millions of dollars.
+
+== Constructing an Expert System
+
