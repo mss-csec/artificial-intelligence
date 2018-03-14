@@ -47,8 +47,33 @@ The fundamental problem with expert systems is its nature as a white box: *every
 Expert systems may provide short-term gains, but as maintenance times lengthen, so does the cost.
 
 The whole reason why expert systems were built was because human labour is vastly more expensive than computation.
-And yet, building an expert system requires human maintenance.
+And yet, building an expert system requires extensive human maintenance.
 Expert systems are self-defeating.
 
 == A Program that Learns to Play Checkers
 
+Since the beginning of code compilation, one little experiment was trucking along, gliding under the radar of the general public.
+
+In the late 1940's, IBM engineer Arthur Samuel an interesting side project: writing a program that learns to play checkers.
+Samuel often tested his program on IBM 701 computers that were still on the production line.
+
+After a while, it turned out that his program was able to do something remarkable: it could beat all but the best checkers players in the world without fail, something that an expert system could never achievefootnote:[an expert system would perform at best as well as the best in the world; considering the amount of rules and strategies that could go into playing checkers, it would have horrible bugs; considering that it'd be quite deterministic, it'd be quite easy to exploit].
+
+What's interesting here is his approach.
+An expert system for playing checkers would be a program that plays checkers.
+But Samuel wrote a program that _learns_ to play checkers.
+
+Samuel called his approach a term that we're all very familiar with today: *machine learning*.
+His program played games of checkers over and over with themselves, learning optimal strategiesfootnote:['optimality' was measured by a heuristic of Samuel's design; we'll see how this becomes important later.] until a few were able to prevail.
+
+It took a while to find a way to structure his learning paradigm so that it'd be able to learn so well, but the success of machine learning planted a seed that began to sprout and grow explosively after the decline of the expert system in the nineties that would, arguably, become responsible of a bubble of its own -- even after the project was shut down after then-IBM-CEO Thomas J. Watson, Jr., felt that the public would feel threatened by the prospect of intelligent machines.
+
+Something interesting emerges when you compare the definitions of *intelligence* and *learning*:
+
+intelligence:: _n._ the ability to acquire and apply knowledge and skills.
+
+learning:: _ger._ to acquire knowlege or skills.
+
+Notice any similarities?
+
+With that in mind, it's time to leave behind expert systems in pursuit of making machines that can learn.
