@@ -4,4 +4,4 @@ layout: lesson
 category: artificial-intelligence
 lesson: 4
 ---
-= k--Nearest Neighbours
+= k-Nearest Neighbours
