@@ -5,3 +5,57 @@ category: artificial-intelligence
 lesson: 4
 ---
 = k-Nearest Neighbours
+
+So having _people_ come up with rules is too expensive.
+Instead, we should consider making machines themselves come up with rules.
+
+How?
+
+== Bashing Your Head at a Problem
+
+Once again, we can try and use a brute-force approach.
+Our goal is to make a machine "learn" rules from sample data.
+
+[.right]
+image:++https://upload.wikimedia.org/wikipedia/commons/2/27/MnistExamples.png++[MNIST sample,300,300]
+
+One very, very simple way to do this is to just make the sample data the rules.
+If you get an input that exactly matches that of one of the sample data, we're done!
+Obviously the result should match the label of the datapoint in the sample.
+
+On the right is a sample of the MNIST database.
+The entire database is, of course, much larger.
+
+But I think we can already start to see a problem.
+
+There's way, way too much variation among individual digits.
+And even if you tried to write a single digit in exactly the same way, you wouldn't get it to pixel-perfect intensity.
+
+This is memorization.
+
+One datapoint in the MNIST dataset consists of the digit that was intended to be written, and a twenty-eight by twenty-eight grayscale image of the written digit.
+In other words, there's \(256^{28\times 28}\), or about \(1.15\times10^{1888}\) distinct images to consider.
+
+There are about \(10^{80}\) atoms in the visible universe.
+
+To memorize *not* to learn.
+
+We certainly don't compare every digit we see to every digit we've seen previously to try and find a match.
+When we learn language, we don't memorize every sentence that appears.
+
+No, we look for _patterns_.
+In language, we look for patterns in the usage of words -- vocabulary -- and in the placement of words -- grammar.
+We look for simpler rules, and for generalizations.
+
+And here, we arrive at one of the pillars of machine learning, an aphorism that extends beyond academia:
+
+[big]#``To learn is to generalize.``#
+
+== Similarities
+
+So how do we generalize?
+
+After just a little bit of thought, it may seem obvious that we should look for whichever sample data is most similar to the input.
+And this is quite a reasonable thing to do.
+
+In fact, it's such a reasonable thing to do that computer scientists call it *nearest neighbour search*.
