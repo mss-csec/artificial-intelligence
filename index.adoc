@@ -3,12 +3,16 @@ layout: landing
 category: artificial-intelligence
 schedule:
   introduction-to-artificial-intelligence: 21 Mar 2018
-  the-expert-system: 7
-  the-ai-winter: 7
-  k-nearest-neighbours: 7
-  decision-trees: 7
-  neural-networks: 7
-  evolutionary-algorithms: 7
+  the-expert-system: 4 Apr 2018
+  the-ai-winter: 11 Apr 2018
+  k-nearest-neighbours: Apr Mar 2018
+  intractability: 25 Apr 2018
+  decision-trees: 2 May 2018
+  neural-networks: 9 May 2018
+  evolutionary-algorithms: 23 May 2018
+  bayesian-networks: 30 May 2018
+  competence: 6 Jun 2018
+  prospects: 13 Jun 2018
 ---
 = Artificial Intelligence
 

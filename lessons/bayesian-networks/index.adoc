@@ -2,6 +2,6 @@
 liquid: true
 layout: lesson
 category: artificial-intelligence
-lesson: 7
+lesson: 9
 ---
-= Neural Networks
+= Bayesian Networks
