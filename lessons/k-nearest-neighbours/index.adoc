@@ -58,4 +58,47 @@ So how do we generalize?
 After just a little bit of thought, it may seem obvious that we should look for whichever sample data is most similar to the input.
 And this is quite a reasonable thing to do.
 
-In fact, it's such a reasonable thing to do that computer scientists call it *nearest neighbour search*.
+In fact, it's such a reasonable thing to do that computer scientists call it link:++https://en.wikipedia.org/wiki/Nearest_neighbor_search++[*nearest neighbour search*].
+
+The opposite of a similarity is a difference, and looking for the most similar is equivalent to finding the least different.
+If you have prior knowledge of statistics, you'll know that differences are easier to quantify and measure, which is why we'll use that too.
+
+If we considered a very, very simple problem to put it against, we can see how this works.
+Consider if we had *toy data* for a two-variable binary classification -- that is, we know two pieces of information, and we'll use that to decide whether that should result in yes it is/no it isn't classification.
+
+You may notice that this could be an extremely simplified version of digit classification: with MNIST, there were \(28^2=784\) different pixels, ie. pieces of information per data point, and ten different classifications.
+Simplifying problems into something easily manageable is a common technique, and will be an immense aid in understanding.
+
+In the toy data, we had only two different variables, which give rise to a simple binary classification.
+If you recall from basic statistics classes in grade school where you called the subject "data management," you'll recall that you can plot two-variable data points on a two-dimensional scatter plot.
+
+From there, the difference -- or "inverse similarity" if you'd prefer -- between two data points is just the _distance_ between them.
+By Pythagoras,
+
+[stem]
+++++
+\text{distance}=\sqrt{(x_a-x_b)^2+(y_a-y_b)^2}
+++++
+
+Of course, if your two variables have very different scales -- like a country's GDP per capitafootnote:[varies between pennies and tens of thousands] compared to its rating on the Democracy Indexfootnote:[between 0.0 and 10.0] -- the distance formula would have to be adjusted or the variable with larger range would be too highly-favoured.
+
+From there, every new input just needs their distance against every training data point computed, and the resulting classification is the same as that of the closest training data point.
+
+Extending this back to a larger number of variables and classifications is trivial; the distance formula simply becomes the general \(n\)-dimensional distance formula:
+
+[stem]
+++++
+\text{distance}=\sqrt{\sum_{i=0}^{n}{(a_i-b_i)^2}}
+++++
+
+pass:[...] and the resulting classification is still the same as that of the least-distant training data point.
+
+If we just use Euclidean distancefootnote:[that's Pythagoras; this is opposed to, say, Manhattan distance], then what we get is a nice link:++https://en.wikipedia.org/wiki/Voronoi_diagram++[Voronoi] output space:
+
+image:++https://upload.wikimedia.org/wikipedia/commons/c/cc/Data3classes.png++[Plotted Test Data, width=49%]
+image:++https://upload.wikimedia.org/wikipedia/commons/5/52/Map1NN.png++[Output Space, width=49%]
+
+And I think that by comparing the above two images here, you can immediately see some problems with this approach.
+
+== Simplicity
+
