@@ -102,3 +102,47 @@ And I think that by comparing the above two images here, you can immediately see
 
 == Simplicity
 
+You can see one the left-hand-side image that there's three large clusters of red, green, and blue.
+There _are_ some elements of another colour sort of "infiltrating" these clusters, but this can simply be due to mislabeled sample data or ambiguous cases -- training data is pre-labeled, usually by humans, after all.footnote:[if a survey was sent out to label data points, it could be even worse, as many survey-takers may troll the responses.]
+
+Every data point is not equal.
+Some are outliers, and that must be dealt with.
+
+There's one tiny, easy change we can make here.
+Our previous approach was to find the *nearest neighbour*.
+The title of this lesson is *_k_-nearest neighbours*.
+
+The k-Nearest Neighbour algorithm isn't particulary flashy or modern -- it was in use by 1967 -- but it's our first step into making a real machine-learning algorithm.
+And the improvement from the basic nearest-neighbour algorithm is quite impressive:
+
+image:++https://upload.wikimedia.org/wikipedia/commons/5/52/Map1NN.png++[1-NN, width=49%]
+image:++https://upload.wikimedia.org/wikipedia/commons/8/8c/Map5NN.png++[5-NN, width=49%]
+
+On the left is the old nearest-neighbour (NN) output space; on the right is the 5-nearest-neighbours (5-NN) output space.
+And you can see how it cleanly separates the clusters with few exceptions, and that it recognizes spaces that may be ambiguous due to the lack of data.
+
+Today, the k-NN approach is a common first line of attack for machine-learning problems; many applications don't need anything more complicated.
+
+So let's get back to working with the MNIST database.
+There's a few problems with using a bare k-NN approach, but we can improve its performance with a few techniques such as slightly blurring out the images.
+And after doing so, it can achieve a 3-4% error rate.
+
+And that's quite impressive for a problem that we'd never figure out through an expert system approach.
+
+So it looks like we've figured out machine learning, huh?
+
+Not at all.
+
+There are still many problems with the k-Nearest Neighbours approach.
+You can already see in the 5-NN output space above that in areas with sparse data, there will still be many glitches.
+You can also see that although the algorithm generalizes well for large, clear clusters, it doesn't for small, local clusters -- and in the areas without much data, it still gives biazarre boundaries.
+The k-NN approach both overfits and underfits at the same time.footnote:[we'll get to that next lesson]
+
+And finally, when we try to apply it to the MNIST database, we can see another problem.
+Each data point contains too much data.
+There are seven-hundred-eighty-four different dimensions.
+
+Twenty-eight by twenty-eight is a tiny picture.
+What will happen when we try to do it with 256x256 pictures?
+
+K-Nearest Neighbours is a good approach to start with, but we need something better.
