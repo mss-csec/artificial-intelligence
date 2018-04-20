@@ -23,7 +23,7 @@ You can recognize a digit by its shape, but not so much from its typeface or med
 
 So that's exactly what we should do: finding rules from data is simply about picking out the relevant information to use given the data.
 
-[red]#add image of toy data here#
+image:toy_data.png["toy data", role="right"]
 
 To see how we'd approach this, let's play with some toy data.
 Should the unclassified (black) data point be classified red or green?
@@ -42,12 +42,12 @@ Wait a second.
 Okay, there seems to be multiple rules that might work; so how about we try to enumerate all distict rules that might work for this set of sample data?
 To be precise, we can label each square of a block with a boolean variable and then we're just tring to find an \(f:\mathbb{B}^4\mapsto\{\text{red},\text{green}\}\)footnote:[some function that takes in four boolean variables (one per square) and classifies it as red or green] that works with the sample data.
 
-[red]#add image of both earlier classifications with defined boolean functions#
+image:rules.png["rules", width=97%]footnote:[\(\wedge\) is the ``and`` operator and \(\vee\) is the ``or`` operator]
 
 Alright; well, let's first try to break this approach.
 Is there a way to tailor our rule so that every input is classified red except for the three green-classified sample blocks?
 
-[red]#add image of such a boolean function and how every possible block would be classified#
+image:broken.png["borken", width=97%]footnote:[\(\overline{x}\) denotes ``not x``]
 
 Oh.
 
