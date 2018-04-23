@@ -87,11 +87,15 @@ The better we do on our training data, the more likely we're overfitting.
 The opposite, of course, is underfitting with rules that are too general.
 The closer the performance between the training and real data, the more likely we're underfitting.
 
-[red]#add image of hilariously underfitting/overfitting data#
+image:overunder.png["linear and polynomial regression on quadratic data", width=50%, role=left]
 
 Here we reach our third pillar of machine learning:
 
-[big]#``Machine learning algorithms must both perform well on training data and generalize, two goals which are fundamentally opposed.``#
+[source,{0}]
+----
+Machine learning algorithms must both perform well on training data and generalize,
+two goals which are fundamentally opposed.
+----
 
 Use rules that are too simple, that have too much *bias*, and we risk underfitting.
 Use rules that are too expressive, that have too much *variance*, and we risk overfitting.
@@ -133,6 +137,6 @@ Ten would take about fifty-four times the age of the universe.
 Obviously, this is kind of problematic.
 The number of rules we need to test rapidly increases, and the growth is quickly unsustainable.
 
-T whis problem of having unbelievably fast growth in computational complexity wiht just small increases in the input is called intractability.
-And despite years of research, problems of htis type still have no reasonably-growing solutions.
+This problem of having unbelievably fast growth in computational complexity wiht just small increases in the input is called intractability.
+And despite years of research, problems of this type still have no reasonably-growing solutions.
 Intractability is responsible for an AI winter of its own, and it wasn't for a while until some developments allowed us to work around it.
