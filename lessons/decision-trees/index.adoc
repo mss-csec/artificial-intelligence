@@ -12,8 +12,8 @@ Our computers simply aren't powerful enough to find us the perfect rule.
 But hold on.
 Do we really need the perfect rule?
 
-Recall from last elsson that machine learning is funamentally ill-posed.
-Recall from the very first lesson our workable definitio nof artificial intelligence: a field of study of the techniques used for solving problem wit hambiguous features.
+Recall from last lesson that machine learning is fundamentally ill-posed.
+Recall from the very first lesson our workable definition of artificial intelligence: a field of study of the techniques used for solving problem with ambiguous features.
 
 Recall from the very first lesson an idea that has become a theme of this series: that of asking the right questions.
 
@@ -23,30 +23,30 @@ The perfect rule both nonexistent and unnecessary.
 
 == Greed
 
-We can reasonably expect that if one variable -- in our case, pixel -- of the data tends to afford us he most information i n hte case of one-pixel rules, it hsould also be a significant factor the case of two-pixel rules.
-And while this may not hold to bexactly true as we gofurther down the line and incrrase the numbre of pixels to consider, it sould hold to be approximately true.footnote:[Nearby pixels will correlate - -that is, share similar values -- so while the cluster itself gives information, any pixel within the cluster is approximately equal at giving that piece of information. However, once one pixel is considered, the utility of the rest of the pixels in that cluster is very little, which means that they won't be chosen at the same time. The combination of these two gives rise to this effet].
+We can reasonably expect that if one variable -- in our case, pixel -- of the data tends to afford us the most information in the case of one-pixel rules, it should also be a significant factor for the case of two-pixel rules.
+And while this may not hold to be exactly true as we go further down the line and increase the number of pixels to consider, it should hold to be approximately true.footnote:[Nearby pixels will correlate - -that is, share similar values -- so while the cluster itself gives information, any pixel within the cluster is approximately equal at giving that piece of information. However, once one pixel is considered, the utility of the rest of the pixels in that cluster is very little, which means that they won't be chosen at the same time. The combination of these two gives rise to this effet].
 
 [red]#insert image of clustering pixels and the above effect#
 
 So what we could do very simply now is to choose the best pixel at each level that we add a pixel.
-doing this in the fasion of a decisio ntree then makes the computation complexity linear across the depth of the tree (or number of pixels) rather than combinatoric.footnote:[If there are \(m\) pieces of training data, \(n\) pixels/variables per piece of data, and \(k\) desired levels of depth in the tree, then each of the \(k\) split levels tests up to \(n\) pixels for each of the \(m\) total training cases, resulting in \(\text{O}(kmn)\) time complexity, linear with respect to \(k\).]
+Doing this in the fashion of a decision tree then makes the computation complexity linear across the depth of the tree (or number of pixels) rather than combinatoric.footnote:[If there are \(m\) pieces of training data, \(n\) pixels/variables per piece of data, and \(k\) desired levels of depth in the tree, then each of the \(k\) split levels tests up to \(n\) pixels for each of the \(m\) total training cases, resulting in \(\text{O}(kmn)\) time complexity, linear with respect to \(k\).]
 
-So now we just need to tdetermine how to choose the best pixel.
+So now we just need to determine how to choose the best pixel.
 We'll still work with our simplified model of only classifiying as zero and not-zero.
 
-One very simple wayt o do this is to label each split iwth whatever class of the classification takes up its majority, and then count up the number of "misclassifications" after each split.
+One very simple way to do this is to label each split with whatever class of the classification takes up its majority, and then count up the number of "misclassifications" after each split.
 The lowest-misclassification split wins.
 Simple and logical.
 
 You may have already seen a problem with this approach.
-If we actually run it, we'll find that every single pixel achieves exactly the same number of misclassificaitons, and that's becasue they'll all be calssified not-zero due to the sheer imbalance in the data.
+If we actually run it, we'll find that every single pixel achieves exactly the same number of misclassificaitons, and that's because they'll all be classified not-zero due to the sheer imbalance in the data.
 
 Artificially balancing the data isn't desirable, because in that way we'll lose information from whatever we cut and place undue emphasis on whatever we repeat.
-In the real world, data i s lopsided; it would be bad to train a terrorist detector with data tha timplies that half of all pepole are terrorists.
+In the real world, data is lopsided; it would be bad to train a terrorist detector with data that implies that half of all pepole are terrorists.
 
-We could, alternatively, use and ipurti ymeasure.
+We could, alternatively, use an impurity measure.
 We split as before and label the impurity after each split: a split of 60=40 will be labeled 40% impure.
-From there, we'll take their weighted average given the actual amounts in each _side_ of the split to prevent the domination of single-data-point splits, and take the split with the lowest new meaure of impuirty.
+From there, we'll take their weighted average given the actual amounts in each _side_ of the split to prevent the domination of single-data-point splits, and take the split with the lowest new meaure of impurity.
 
 Take a look at this equation here:
 
@@ -56,11 +56,11 @@ Take a look at this equation here:
 ++++
 
 
-Sof or all that trouble, we've just come up with a normalized version of misclassification.
+So for all that trouble, we've just come up with a normalized version of misclassification.
 
 == Information
 
-While many developments have been made in getting useful metric, not one objective, mathematically rigourous method has been found for it.
+While many developments have been made in getting useful metric, not one objective, mathematically rigorous method has been found for it.
 
 And so, instead of approaching this with rigorous logic, we're gonna have to [line-through]#make shit up# use heuristics.
 
@@ -87,16 +87,16 @@ but we want the "impurity" after splitting to always be lower such that
 i(\alpha p_0+(1-\alpha)p_1)\ge\alpha i(p_0)+(1-\alpha)i(p_1)
 ++++
 
-Wikipedia tells ust htat what we want, then, is a concave function \(i\); the simplist concave function is an upside-down parabola, so we can just use \(i(p)=p(1-p)\).
+Wikipedia tells use that what we want, then, is a concave function \(i\); the simplist concave function is an upside-down parabola, so we can just use \(i(p)=p(1-p)\).
 
 This heuristic is known as GINI impurity and was first developed by UCB statisiticians Leo Breiman and Jerome H. Friedman.
 And it turns out that it works pretty well.
 GINI Impurity is the most common impurity heruistic used in decision tree learning today.
 
-Around the same time, Ross Quinlan, ocmputer science researcher in data science and decision theory, came upwith his own heuristic with some actual theoretical backing.
+Around the same time, Ross Quinlan, computer science researcher in data science and decision theory, came up with his own heuristic with some actual theoretical backing.
 
-Quinlan ook inspiration from information theory, orignially formulated by Claude E Shannon, American mathematician, fo the purpose of signal processing for his then-employer Bell Labs in 1948.
-Despite Shannon's reservations in thoughtlessly applying the ides of information theory to othe fields, even warning ina 1956 editorial that infomration theory is "a technical tool for the communications engineer," reminding us that "[seldom] do more than a few of nature's secrets give way at one time,"footnote:[link:++https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=1056774++[Claude E. Shannon's _The Bandwagon_, 1956]] informaiton thoery is now at the intersection of mathematics, statistics, omputer science, pysics, neurology, and electrical engineering ,and finds itself with applicaitons in numberous other areas, such as in patter recognition -- AI.
+Quinlan took inspiration from information theory, originally formulated by Claude E Shannon, American mathematician, for the purpose of signal processing for his then-employer Bell Labs in 1948.
+Despite Shannon's reservations in thoughtlessly applying the ideas of information theory to othe fields, even warning in a 1956 editorial that infomration theory is "a technical tool for the communications engineer," reminding us that "[seldom] do more than a few of nature's secrets give way at one time,"footnote:[link:++https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=1056774++[Claude E. Shannon's _The Bandwagon_, 1956]] informaiton thoery is now at the intersection of mathematics, statistics, computer science, physics, neurology, electrical engineering, and finds itself with applications in numberous other areas, such as in pattern recognition -- AI.
 
 One of the postulates of inormation theory is that the information received from an event is equal to the negative logarithm of its probability:
 
@@ -105,7 +105,7 @@ One of the postulates of inormation theory is that the information received from
 \text{I}(m)=-\log_2\text{P}(m)\ \ \text{bits}
 ++++
 
-This is also called the _surprisal_ of the event, and makes sense in many ways; finding that yo ugot a question right on a test when you were sure that iwas right doesn't tell you much, but finding that you gotit wrong tells you many things: what is right, what is wrong, and that you're not as well-tuned to your abilities as you thought you were.
+This is also called the _surprisal_ of the event, and makes sense in many ways; finding that you got a question right on a test when you were sure that "I was right" doesn't tell you much, but finding that you got it wrong tells you many things: what is right, what is wrong, and that you're not as well-tuned to your abilities as you thought you were.
 
 But before any event occurs, there is _uncertainty_ about what will occur, which is measured by *entropy*.
 Entropy is measured by the average information received after an event takes place:
@@ -116,14 +116,14 @@ Entropy is measured by the average information received after an event takes pla
 ++++
 
 Quinlan took this idea and ran with it.
-Hel et each event be each possible classificatoin of the data and the "probabiliity" that the event is selected the proportion of data preclassified as the classification in question, so that the "entropy" at every node can be calculated:
+He let each event be each possible classification of the data and the "probability" that the event is selected the proportion of data preclassified as the classification in question, so that the "entropy" at every node can be calculated:
 
 [stem]
 ++++
 \text{H}(\mathbf{P})=\sum_{p\in\mathbf{P}}i(p)\log_2i(p)
 ++++
 
-Since entropy is uncertainty and information clears it up, the *information gain* is simply the entory of the arent node less the wighted sum of each of its children nodes.
+Since entropy is uncertainty and information clears it up, the *information gain* is simply the entropy of the arent node less the weighted sum of each of it's children nodes.
 
 Information gain and GINI impurity look pretty similar:
 
@@ -131,10 +131,10 @@ Information gain and GINI impurity look pretty similar:
 
 It turns out that information gain actually performs better for certain applications; but whatever the case, it's another heuristic that works.
 
-Decision tree learning is the first schema that we can sya, without reservation, learns.
+Decision tree learning is the first schema that we can say, without reservation, learns.
 And they're pretty great!
-They're a hwite box, are rather sipmle and understandable, and actually demonstrates feature selection.
-The baseline decision tree leanring algorithm can achieve a 7.7% error rate on MNIST; simple refinements can bring it down to 1.5% and through some more to 0.9%.footnote:[link:++http://yann.lecun.com/exdb/mnist/++[Decision trees can also be called "boosted stumps."]]
+They're a white box, are rather simple and understandable, and actually demonstrates feature selection.
+The baseline decision tree learning algorithm can achieve a 7.7% error rate on MNIST; simple refinements can bring it down to 1.5% and through some more to 0.9%.footnote:[link:++http://yann.lecun.com/exdb/mnist/++[Decision trees can also be called "boosted stumps."]]
 
 Decision trees have one fault, however: they can only effectively express simple, logical ideas.
-It's difficult or them to express things lik exclusive-or gates and while they're great at saying "this is a lemon," they easily have problems with "there exist lemons here," as this would require trees that check every position, which cause many troubles with over- and under-fitting.
+It's difficult for them to express things like exclusive-or gates and while they're great at saying "this is a lemon," they easily have problems with "there exist lemons here," as this would require trees that check every position, which cause many troubles with over- and under-fitting.
